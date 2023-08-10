@@ -1,0 +1,45 @@
+<mxfile host="65bd71144e">
+    <diagram id="Mml-HAgnvxCOn2OWBjwX" name="Page-1">
+        <mxGraphModel dx="866" dy="1959" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="顺序6、5、4、3、2、1，下面哪个是正确的出栈顺序序列？&lt;br&gt;&lt;br&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;A.&amp;nbsp; 5、4、3、6、1 、2&amp;nbsp; &amp;nbsp; &amp;nbsp;B.&amp;nbsp; &amp;nbsp;4、5、3、2、1、6&amp;nbsp; &amp;nbsp; &amp;nbsp;C.&amp;nbsp; &amp;nbsp; 3、4、6、5、2、1&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;D.&amp;nbsp; &amp;nbsp; &amp;nbsp;2、3、4、1、5、6&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="20" y="-510" width="770" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.42;entryY=0.967;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="7" target="9" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="508" y="-190" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7" value="" style="rounded=0;whiteSpace=wrap;html=1;rotation=90;fillColor=#f0a30a;fontColor=#000000;strokeColor=#BD7000;" parent="1" vertex="1">
+                    <mxGeometry x="380.63" y="-114.37" width="253.75" height="87.5" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=#006EAF;fontColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="447.5" y="50" width="120" height="10" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="栈特性：先进后出（first in last out）" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#2D7600;fillColor=#60a917;fontColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="414" y="-340" width="220" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="6" style="shape=ext;double=1;rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="294.38" y="-190" width="86.25" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="5" style="shape=ext;double=1;rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="294.38" y="-149.38" width="86.25" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="4" style="shape=ext;double=1;rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="294.38" y="-109.38" width="86.25" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="3&lt;span style=&quot;color: rgba(0, 0, 0, 0); font-family: monospace; font-size: 0px; text-align: start;&quot;&gt;%3CmxGraphModel%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20value%3D%224%22%20style%3D%22shape%3Dext%3Bdouble%3D1%3Brounded%3D0%3BwhiteSpace%3Dwrap%3Bhtml%3D1%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22270%22%20y%3D%22-90%22%20width%3D%2286.25%22%20height%3D%2230%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E&lt;/span&gt;&lt;span style=&quot;color: rgba(0, 0, 0, 0); font-family: monospace; font-size: 0px; text-align: start;&quot;&gt;%3CmxGraphModel%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20value%3D%224%22%20style%3D%22shape%3Dext%3Bdouble%3D1%3Brounded%3D0%3BwhiteSpace%3Dwrap%3Bhtml%3D1%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22270%22%20y%3D%22-90%22%20width%3D%2286.25%22%20height%3D%2230%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E&lt;/span&gt;" style="shape=ext;double=1;rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="294.38" y="-69.38" width="86.25" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="2" style="shape=ext;double=1;rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="294.38" y="-29.380000000000006" width="86.25" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="1" style="shape=ext;double=1;rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="294.38" y="10.619999999999994" width="86.25" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
