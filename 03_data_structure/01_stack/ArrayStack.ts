@@ -14,7 +14,7 @@ export default class ArrayStack<T> implements IStack<T> {
   }
 
   peek() {
-    return this.stack[this.stack.length - 1] as T | undefined
+    return this.stack[this.stack.length === 0 ? 0 : this.stack.length - 1] as T | undefined
   }
 
   isEmpty() {
