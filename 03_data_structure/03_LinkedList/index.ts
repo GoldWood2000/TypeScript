@@ -93,6 +93,28 @@ class LinkedList<T> {
     return -1
   }
 
+  //遍历反转链表
+  reverse() {
+    if (this.size === 0) return
+    let newNode = new LinkedList<T>()
+
+    while (this.head) {
+      let current = this.head.next
+      this.head.next = newNode.head
+      newNode.head = this.head
+      this.head = current
+    }
+
+    this.head = newNode.head
+  }
+
+  //递归反转链表
+  recursion(current: Node<T> = this.head, prev: Node<T> | null = null) {
+    if (this.size === 0) return
+    current.next ? this.recursion(current.next, current) : this.head = current
+    current.next = prev
+  }
+
   traverse(fn?: (v: Node<T>, i: number) => void) {
     let current = this.head
     let i = 0
@@ -124,5 +146,9 @@ console.log(link.removeAt(2));
 console.log(link.traverse());
 console.log(link.get(1));
 
+link.recursion()
+console.log(link.traverse());
+link.reverse()
+console.log(link.traverse());
 
 export { LinkedList }
