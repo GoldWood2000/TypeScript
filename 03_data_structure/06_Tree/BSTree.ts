@@ -132,6 +132,15 @@ class BST<T> {
       }
     }
   }
+
+  max() {
+    if (!this.root) return -1
+
+    let current = this.root
+    while (current) {
+      current.right
+    }
+  }
 }
 
 const bst = new BST<number>()
