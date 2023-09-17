@@ -46,7 +46,6 @@ class BST<T> {
 
     //遍历
     // let current: ITreeNode<T> = this.root
-
     // while (current) {
     //   const direction: 'right' | 'left' = (treeNode.value as T) > (current.value as T) ? 'right' : 'left'
     //   if (!current[direction]) {
@@ -56,9 +55,72 @@ class BST<T> {
     //   current = current[direction]
     // }
   }
+
+  /**
+   * 访问根节点
+   * 访问左子树
+   * 访问右子树
+   */
+  private preOrderTraverseNode(root: ITreeNode<T>, callbackfn: (value: T) => void) {
+    if (!root) return
+
+    callbackfn(root.value as T)
+    if (root.left) {
+      this.preOrderTraverseNode(root.left, callbackfn)
+    }
+    if (root.right) {
+      this.preOrderTraverseNode(root.right, callbackfn)
+    }
+  }
+
+  preOrderTraverse(callbackfn: (value: T) => void) {
+    this.preOrderTraverseNode(this.root, callbackfn)
+  }
+
+  /**
+   * 访问左子树
+   * 访问根节点
+   * 访问右子树
+   */
+  private inOrderTraverseNode(root: ITreeNode<T>, callbackfn: (value: T) => void) {
+    if (!root) return
+
+    if (root.left) {
+      this.inOrderTraverseNode(root.left, callbackfn)
+    }
+    callbackfn(root.value as T)
+    if (root.right) {
+      this.inOrderTraverseNode(root.right, callbackfn)
+    }
+  }
+
+  inOrderTraverse(callbackfn: (value: T) => void) {
+    this.inOrderTraverseNode(this.root, callbackfn)
+  }
+
+  /**
+   * 访问左子树
+   * 访问右子树
+   * 访问根节点
+   */
+  private lastOrderTraverseNode(root: ITreeNode<T>, callbackfn: (value: T) => void) {
+    if (!root) return
+
+    if (root.left) {
+      this.lastOrderTraverseNode(root.left, callbackfn)
+    }
+    if (root.right) {
+      this.lastOrderTraverseNode(root.right, callbackfn)
+    }
+    callbackfn(root.value as T)
+  }
+
+  lastOrderTraverse(callbackfn: (value: T) => void) {
+    this.lastOrderTraverseNode(this.root, callbackfn)
+  }
 }
 
-const bst = new BST()
+const bst = new BST<number>()
 // bst.insert(4)
 // bst.insert(2)
 // bst.insert(7)
@@ -86,5 +148,22 @@ bst.insert(6)
 
 bst.print()
 
+const premap: number[] = []
+bst.preOrderTraverse((value) => {
+  premap.push(value)
+})
+console.log(premap.join(','));
+
+const inmap: number[] = []
+bst.inOrderTraverse((value) => {
+  inmap.push(value)
+})
+console.log(inmap.join(','));
+
+const lastmap: number[] = []
+bst.lastOrderTraverse((value) => {
+  lastmap.push(value)
+})
+console.log(lastmap.join(','));
 
 export default {}
