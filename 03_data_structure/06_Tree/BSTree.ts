@@ -31,7 +31,6 @@ class BST<T> {
     }
     this.insertNode((root[direction] as TreeNode<T>), node)
   }
-
   insert(value: T) {
     if (!value) return
 
@@ -72,7 +71,6 @@ class BST<T> {
       this.preOrderTraverseNode(root.right, callbackfn)
     }
   }
-
   preOrderTraverse(callbackfn: (value: T) => void) {
     this.preOrderTraverseNode(this.root, callbackfn)
   }
@@ -93,7 +91,6 @@ class BST<T> {
       this.inOrderTraverseNode(root.right, callbackfn)
     }
   }
-
   inOrderTraverse(callbackfn: (value: T) => void) {
     this.inOrderTraverseNode(this.root, callbackfn)
   }
@@ -114,9 +111,26 @@ class BST<T> {
     }
     callbackfn(root.value as T)
   }
-
   lastOrderTraverse(callbackfn: (value: T) => void) {
     this.lastOrderTraverseNode(this.root, callbackfn)
+  }
+
+  //层序遍历
+  levelOrderTraverse(callbackfn: (value: T) => void) {
+    if (!this.root) return
+
+    const queue = [this.root]
+
+    while (queue.length !== 0) {
+      const node = queue.shift() as TreeNode<T>
+      callbackfn(node.value as T)
+      if (node.left) {
+        queue.push(node.left)
+      }
+      if (node.right) {
+        queue.push(node.right)
+      }
+    }
   }
 }
 
@@ -165,5 +179,11 @@ bst.lastOrderTraverse((value) => {
   lastmap.push(value)
 })
 console.log(lastmap.join(','));
+
+const levelmap: number[] = []
+bst.levelOrderTraverse((value) => {
+  levelmap.push(value)
+})
+console.log(levelmap.join(','));
 
 export default {}
