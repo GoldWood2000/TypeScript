@@ -147,6 +147,17 @@ class BST<T> {
       current = current[best]!
     }
   }
+
+  search(value: T) {
+    let current = this.root
+
+    while (current) {
+      if (current.value === value) return true
+      current = value > current.value! ? current.right : current.left
+    }
+
+    return false
+  }
 }
 
 const bst = new BST<number>()
@@ -203,6 +214,8 @@ console.log(levelmap.join(','));
 
 console.log(bst.bestValue('max'));
 console.log(bst.bestValue('min'));
+console.log(bst.search(3));
+console.log(bst.search(1));
 
 
 export default {}
