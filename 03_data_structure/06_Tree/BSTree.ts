@@ -133,12 +133,18 @@ class BST<T> {
     }
   }
 
-  max() {
+  //最大值、最小值
+  bestValue(type: 'max' | 'min') {
     if (!this.root) return -1
 
+    const best = type === 'max' ? 'right' : 'left'
     let current = this.root
+
     while (current) {
-      current.right
+      if (!current[best]) {
+        return current.value
+      }
+      current = current[best]!
     }
   }
 }
@@ -194,5 +200,9 @@ bst.levelOrderTraverse((value) => {
   levelmap.push(value)
 })
 console.log(levelmap.join(','));
+
+console.log(bst.bestValue('max'));
+console.log(bst.bestValue('min'));
+
 
 export default {}
