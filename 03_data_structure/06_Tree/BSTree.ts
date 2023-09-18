@@ -133,7 +133,7 @@ class BST<T> {
     }
   }
 
-  //最大值、最小值
+  //最大值、最小值 O(log n)
   bestValue(type: 'max' | 'min') {
     if (!this.root) return -1
 
@@ -148,6 +148,7 @@ class BST<T> {
     }
   }
 
+  //搜索 O(log n)
   search(value: T) {
     let current = this.root
 
@@ -157,6 +158,32 @@ class BST<T> {
     }
 
     return false
+  }
+
+  private getNode(value: T) {
+    let current = this.root
+
+    while (current) {
+      if (current.value === value) return current
+      current = current[value > current.value! ? 'right' : 'left']
+    }
+    return null
+  }
+  private getParentNode(value: T) {
+    let prev: ITreeNode<T> = null
+    let current = this.root
+
+    while (current) {
+      if (current.value === value) return prev
+      prev = current
+      current = current[value > current.value! ? 'right' : 'left']
+    }
+    return null
+  }
+  remove(value: T) {
+    if (!this.root) return false
+
+
   }
 }
 
@@ -183,8 +210,6 @@ bst.insert(20)
 bst.insert(18)
 bst.insert(25)
 bst.insert(6)
-
-
 
 bst.print()
 
