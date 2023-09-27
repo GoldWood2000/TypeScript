@@ -180,10 +180,75 @@ class BST<T> {
     }
     return null
   }
+  private getSuccessor(node: TreeNode<T>) {
+    //1. 找到后继节点
+    let current = node.right
+    //后继节点 删除节点的右子树的最小值
+    let successor: ITreeNode<T> = null
+    let successorParent: TreeNode<T> = node
+
+    while (current) {
+      successor = current
+      current = current.left
+      if (current) {
+        successorParent = successor
+      }
+    }
+
+    //2. 替换后继节点左右子树指向操作
+    //处理后继节点没有左子树的情况，就不需要给后继节点的right 变更指向
+    if (successor !== node.right) {
+      successorParent.left = successor!.right
+      successor!.right = node.right
+    }
+
+    successor!.left = node.left
+
+    return successor!
+  }
   remove(value: T) {
-    if (!this.root) return false
+    const node = this.getNode(value)
+    //1.没有找到节点
+    if (!node) return false
 
+    //2.删除叶子节点(左子节点、右子节点都为null为叶子节点)
+    if (!node.left && !node.right) {
+      //2.1 获取其父节点
+      const parent = this.getParentNode(value)
+      //2.2 判断其是否是顶级节点
+      if (parent) {
+        //2.3 判断value 是 左子节点还是右子节点（BST特点：左边小于父节点，反之）
+        parent[value > parent.value! ? 'right' : 'left'] = null
+      } else {
+        this.root = null
+      }
+    }
 
+    //3.删除一个子节点
+    if ((!node.left && node.right) || (!node.right && node.left)) {
+      //3.1 获取其父节点
+      const parent = this.getParentNode(value)
+      //3.2 获取存在的一个子节点的是左边还是右边
+      const exclude = node.left ? 'left' : 'right'
+      if (parent) {
+        const childNode = node[exclude]
+        parent[childNode?.value! > parent.value! ? 'right' : 'left'] = childNode
+      } else {
+        this.root = node[exclude]
+      }
+    }
+
+    //4.删除存在2个子节点
+    if (node.left && node.right) {
+      const successor = this.getSuccessor(node)
+
+      const parent = this.getParentNode(value)
+      if (parent) {
+        parent[successor.value! > parent.value! ? 'right' : 'left'] = successor
+      } else {
+        this.root = successor
+      }
+    }
   }
 }
 
@@ -242,5 +307,33 @@ console.log(bst.bestValue('min'));
 console.log(bst.search(3));
 console.log(bst.search(1));
 
+// bst.remove(3)
+// bst.remove(8)
+// bst.remove(12)
+// bst.remove(25)
+// bst.remove(6)
+// bst.remove(10)
+// bst.print()
 
+// // bst.insert(17)
+// bst.remove(20)
+// bst.print()
+
+// bst.remove(13)
+// bst.print()
+
+
+bst.remove(6)
+bst.insert(19)
+bst.print()
+
+bst.remove(15)
+bst.print()
+
+bst.remove(8)
+bst.remove(7)
+bst.print()
+
+bst.remove(18)
+bst.print()
 export default {}
