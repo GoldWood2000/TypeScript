@@ -17,7 +17,13 @@ class DoublyLinkedList<T> {
   private size: number = 0
 
   private getNode(position: number) {
-
+    let i = 0
+    let current = this.head
+    while (i !== position) {
+      current = current!.next
+      i++
+    }
+    return current
   }
 
   append(value: T) {
@@ -71,11 +77,49 @@ class DoublyLinkedList<T> {
   }
 
   insert(value: T, position: number) {
-
+    if (position === 0) {
+      this.preppend(value)
+    } else {
+      const node = this.getNode(position)
+      const newNode = new Node(value)
+      if (node === this.tail) {
+        newNode.prev = node
+        node!.next = newNode
+        this.tail = newNode
+      } else {
+        const prevNode = node!.prev
+        newNode.next = node
+        newNode.prev = prevNode
+        node!.prev = newNode
+        prevNode!.next = newNode
+      }
+    }
+    this.size++
   }
 
-  removeAt(value: T, position: number) {
-
+  removeAt(position: number) {
+    if (position === 0) {
+      if (this.size === 1) {
+        this.head = null
+        this.tail = null
+      } else {
+        this.head!.prev = null
+        this.head = this.head!.next
+      }
+    } else {
+      const node = this.getNode(position)
+      if (node === this.tail) {
+        this.tail = node!.prev
+        node!.prev!.next = null
+        node!.prev = null
+      } else {
+        const prevNode = node!.prev
+        const nextNode = node!.next
+        nextNode!.prev = prevNode
+        prevNode!.next = nextNode
+      }
+    }
+    this.size--
   }
 
 }
@@ -93,6 +137,30 @@ doublylinkedlist.preppend('f')
 doublylinkedlist.preppend('h')
 doublylinkedlist.traverse()
 doublylinkedlist.traverse(undefined, true)
+doublylinkedlist.insert('f', 0)
+doublylinkedlist.traverse()
+doublylinkedlist.insert('h', 7)
+doublylinkedlist.traverse()
+doublylinkedlist.insert('x', 1)
+doublylinkedlist.traverse()
+doublylinkedlist.insert('y', 1)
+doublylinkedlist.traverse()
+doublylinkedlist.insert('z', 2)
+doublylinkedlist.traverse()
+doublylinkedlist.removeAt(0)
+doublylinkedlist.traverse()
+doublylinkedlist.removeAt(10)
+doublylinkedlist.traverse()
+doublylinkedlist.removeAt(9)
+doublylinkedlist.traverse()
+doublylinkedlist.removeAt(0)
+doublylinkedlist.traverse()
+doublylinkedlist.removeAt(1)
+doublylinkedlist.traverse()
+doublylinkedlist.removeAt(2)
+doublylinkedlist.traverse()
+doublylinkedlist.removeAt(3)
+doublylinkedlist.traverse()
 
 
 
