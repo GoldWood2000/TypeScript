@@ -250,6 +250,21 @@ class BST<T> {
       }
     }
   }
+
+  invertTree(node: TreeNode<T> = this.root!) {
+    let left = node.left
+    let right = node.right
+
+    node.left = right
+    node.right = left
+
+    if (node.left) {
+      this.invertTree(node.left)
+    }
+    if (node.right) {
+      this.invertTree(node.right)
+    }
+  }
 }
 
 const bst = new BST<number>()
@@ -276,6 +291,8 @@ bst.insert(18)
 bst.insert(25)
 bst.insert(6)
 
+bst.print()
+bst.invertTree()
 bst.print()
 
 const premap: number[] = []

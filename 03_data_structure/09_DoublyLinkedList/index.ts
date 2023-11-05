@@ -77,6 +77,8 @@ class DoublyLinkedList<T> {
   }
 
   insert(value: T, position: number) {
+    if (position < 0 && position > this.size) return false
+
     if (position === 0) {
       this.preppend(value)
     } else {
@@ -98,6 +100,8 @@ class DoublyLinkedList<T> {
   }
 
   removeAt(position: number) {
+    if (position < 0 && position >= this.size) return false
+
     if (position === 0) {
       if (this.size === 1) {
         this.head = null
