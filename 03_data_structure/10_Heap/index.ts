@@ -142,37 +142,37 @@ class Heap<T> {
 
 
 
-const maxheap = new Heap()
-maxheap.insert(19)
-maxheap.insert(100)
-maxheap.insert(36)
-maxheap.insert(17)
-maxheap.insert(3)
-maxheap.insert(25)
-maxheap.insert(1)
-maxheap.insert(2)
-maxheap.insert(7)
-maxheap.print()
+// const maxheap = new Heap()
+// maxheap.insert(19)
+// maxheap.insert(100)
+// maxheap.insert(36)
+// maxheap.insert(17)
+// maxheap.insert(3)
+// maxheap.insert(25)
+// maxheap.insert(1)
+// maxheap.insert(2)
+// maxheap.insert(7)
+// maxheap.print()
 
 // console.log(maxheap.peek());
-console.log(maxheap.extract());
-maxheap.print()
-console.log(maxheap.extract());
-maxheap.print()
-console.log(maxheap.extract());
-maxheap.print()
-console.log(maxheap.extract());
-maxheap.print()
-console.log(maxheap.extract());
-maxheap.print()
-console.log(maxheap.extract());
-maxheap.print()
-console.log(maxheap.extract());
-maxheap.print()
-console.log(maxheap.extract());
-maxheap.print()
-console.log(maxheap.extract());
-maxheap.print()
+// console.log(maxheap.extract());
+// maxheap.print()
+// console.log(maxheap.extract());
+// maxheap.print()
+// console.log(maxheap.extract());
+// maxheap.print()
+// console.log(maxheap.extract());
+// maxheap.print()
+// console.log(maxheap.extract());
+// maxheap.print()
+// console.log(maxheap.extract());
+// maxheap.print()
+// console.log(maxheap.extract());
+// maxheap.print()
+// console.log(maxheap.extract());
+// maxheap.print()
+// console.log(maxheap.extract());
+// maxheap.print()
 
 // const arr = [9, 11, 20, 56, 23, 45]
 // maxheap.buildHeap(arr)
@@ -181,4 +181,4 @@ maxheap.print()
 
 
 
-export { }
+export { Heap }

@@ -48,25 +48,22 @@ const BreadthFristSearch = (data, value, cb) => {
 // 5. 重复步骤4。
 // 6. 若stack为空，表示整张图都检查过了——亦即图中没有欲搜寻的目标。结束搜寻并回传“找不到目标”。
 const DepthFirstSearch = (data, value, cb) => {
-  const dfs = (node) => {
-    cb(node)
-    if (node.name === value) {
-      return node
-    }
-    const { children } = node
-    for (let i = 0; i < children.length; i++) {
-      const back = dfs(children[i])
-      if (back) return back
-    }
-  }
 
   if (Array.isArray(data) && data.length !== 0) {
     for (let i = 0; i < data.length; i++) {
-      const res = dfs(data[i])
+      const node = data[i]
+      cb(node)
+      if (node.name === value) {
+        return node
+      }
+      const { children } = node
+      const res = DepthFirstSearch(children, value, cb)
       if (res) return res
     }
     return false
   }
+
+  return false
 }
 
-console.log(tree, DepthFirstSearch(tree, '1-4-1-1', (node) => console.log(node.name)));
+console.log(DepthFirstSearch(tree, '1-4-1-1', (node) => console.log(node.name)));
