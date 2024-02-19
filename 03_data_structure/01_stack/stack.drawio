@@ -1,10 +1,10 @@
 <mxfile host="65bd71144e">
     <diagram id="Mml-HAgnvxCOn2OWBjwX" name="Page-1">
-        <mxGraphModel dx="866" dy="1959" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="1305" dy="2190" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="2" value="顺序6、5、4、3、2、1，下面哪个是正确的出栈顺序序列？&lt;br&gt;&lt;br&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;A.&amp;nbsp; 5、4、3、6、1 、2&amp;nbsp; &amp;nbsp; &amp;nbsp;B.&amp;nbsp; &amp;nbsp;4、5、3、2、1、6&amp;nbsp; &amp;nbsp; &amp;nbsp;C.&amp;nbsp; &amp;nbsp; 3、4、6、5、2、1&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;D.&amp;nbsp; &amp;nbsp; &amp;nbsp;2、3、4、1、5、6&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                <mxCell id="2" value="顺序6、5、4、3、2、1，下面哪个是不正确的出栈顺序序列？&lt;br&gt;&lt;br&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;A.&amp;nbsp; 5、4、3、6、1 、2&amp;nbsp; &amp;nbsp; &amp;nbsp;B.&amp;nbsp; &amp;nbsp;4、5、3、2、1、6&amp;nbsp; &amp;nbsp; &amp;nbsp;C.&amp;nbsp; &amp;nbsp; 3、4、6、5、2、1&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;D.&amp;nbsp; &amp;nbsp; &amp;nbsp;2、3、4、1、5、6&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="20" y="-510" width="770" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="28" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.42;entryY=0.967;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="7" target="9" edge="1">
