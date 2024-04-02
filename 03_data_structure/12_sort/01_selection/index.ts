@@ -22,9 +22,7 @@ const selectionSort = (arr: number[]) => {
       }
 
       if (nextIndex !== -1 && j === arr.length - 1) {
-        const temp = arr[i]
-        arr[i] = arr[nextIndex]
-        arr[nextIndex] = temp
+        [arr[i], arr[nextIndex]] = [arr[nextIndex], arr[i]]
       }
     }
   }
