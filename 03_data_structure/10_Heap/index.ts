@@ -124,6 +124,7 @@ class Heap<T> {
   buildHeap(arr: T[]) {
     this.data = arr
     this.length = arr.length
+    //从最后一个父节点开始开始下滤 O(n)
     let start = Math.floor((this.length - 1) / 2)
 
     for (let i = start; i >= 0; i--) {
